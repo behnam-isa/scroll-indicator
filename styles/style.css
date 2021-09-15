@@ -1,0 +1,162 @@
+@font-face { 
+    font-family: 'vazir';
+    src: url('/fonts/isans.eot') format('eot');
+    src: url('/fonts/isans.ttf') format('truetype');
+    src: url('/fonts/isans.woff') format('woff');
+    src: url('/fonts/isans.woff2') format('woff2');
+ }
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    direction: rtl;
+    font-family: 'vazir';
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.fullpagemenu{
+    position: fixed;
+    top: -100%;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #111;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.6s;
+    -webkit-transition: all 0.6s;
+    -moz-transition: all 0.6s;
+    -ms-transition: all 0.6s;
+    -o-transition: all 0.6s;
+}
+.fullpagemenu.active{
+    top:0;
+}
+.fullpagemenu .banner{
+    position: relative;
+    min-width: 400px;
+    height: 100%;
+}
+.fullpagemenu .banner img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+
+.fullpagemenu .nav{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fullpagemenu .nav ul{
+    position: relative;
+}
+.fullpagemenu .nav ul li{
+    position: relative;
+    padding: 0 20px;
+    list-style: none;
+    margin: 5px 0;
+    overflow: hidden;
+}
+
+.fullpagemenu .nav ul li::before{
+     content: '';
+     position: absolute;
+     top: 0;
+     right: 0;
+     width: 100%;
+     height: 100%;
+     background-color: #ffa502;
+     transform: scaleY(0);
+     -webkit-transform: scaleY(0);
+     -moz-transform: scaleY(0);
+     -ms-transform: scaleY(0);
+     -o-transform: scaleY(0);
+     transition: transform 0.6s;
+     -webkit-transition: transform 0.6s;
+     -moz-transition: transform 0.6s;
+     -ms-transition: transform 0.6s;
+     -o-transition: transform 0.6s;
+     transform-origin: bottom;
+}
+
+.fullpagemenu .nav ul li:hover::before{
+    transform: scaleY(1);
+    -webkit-transform: scaleY(1);
+    -moz-transform: scaleY(1);
+    -ms-transform: scaleY(1);
+    -o-transform: scaleY(1);
+    transform-origin: top;
+}
+
+.fullpagemenu .nav ul li a{
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 60px;
+    display: block;
+    transition: all 0.7s;
+    -webkit-transition: all 0.7s;
+    -moz-transition: all 0.7s;
+    -ms-transition: all 0.7s;
+    -o-transition: all 0.7s;
+}
+.fullpagemenu .nav ul li a::before{
+    content: attr(data-text);
+    position: absolute;
+    bottom: -100%;
+    right: 0;
+    color: #fff;
+}
+.fullpagemenu .nav ul li:hover a{
+    transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+}
+
+
+.menu-icon{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: #fff url('../img/1.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.menu-icon.active{
+    background: #fff url('../img/close.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
